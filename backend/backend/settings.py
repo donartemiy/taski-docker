@@ -62,8 +62,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': '/data/db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('POSTGRES_DB', 'django'),
         'USER': os.getenv('POSTGRES_USER', 'django'),
@@ -116,9 +114,7 @@ STATIC_URL = '/static/'
 # в контейнере это будет /app/collected_static
 STATIC_ROOT = BASE_DIR / 'collected_static'
 # Теперь при вызове команды python manage.py collectstatic
-# Django будет копировать все статические файлы в директорию collected_static 
-
-
+# Django будет копировать все статические файлы в директорию collected_static
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
